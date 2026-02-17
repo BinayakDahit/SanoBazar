@@ -56,7 +56,7 @@ const Navbar = ({ cartItem = [], isLoggedIn = false, hasAccount = true }) => {
             </NavLink>
           </ul>
 
-          {/* Small & attractive Search */}
+          {/* Search */}
           <form onSubmit={handleSearch}>
             <div className="flex items-center border border-gray-300 rounded-full overflow-hidden focus-within:border-red-500">
               <input
@@ -76,7 +76,7 @@ const Navbar = ({ cartItem = [], isLoggedIn = false, hasAccount = true }) => {
             </div>
           </form>
 
-          {/* Cart (same active underline effect) */}
+          {/* Cart */}
           <NavLink to="/cart" className={navItemClass}>
             <div className="relative">
               <IoCartOutline className="h-7 w-7" />
@@ -86,21 +86,21 @@ const Navbar = ({ cartItem = [], isLoggedIn = false, hasAccount = true }) => {
             </div>
           </NavLink>
 
-          {/* Auth: Profile OR single button (Sign Up -> Login) */}
+          {/* Profile icon ALWAYS (Profile if logged in, otherwise Login/Signup) */}
           {isLoggedIn ? (
-            <NavLink to="/profile" className={navItemClass}>
+            <NavLink to="/profile" className={navItemClass} title="Profile">
               <div className="flex items-center gap-2 font-semibold">
                 <FiUser className="h-6 w-6" />
                 <span className="hidden sm:inline">Profile</span>
               </div>
             </NavLink>
           ) : (
-            <Link
-              to={authTo}
-              className="px-4 py-2 bg-red-500 text-white font-semibold rounded-full hover:bg-red-600 transition-all"
-            >
-              {authLabel}
-            </Link>
+            <NavLink to={authTo} className={navItemClass} title={authLabel}>
+              <div className="flex items-center gap-2 font-semibold">
+                <FiUser className="h-6 w-6" />
+                <span className="hidden sm:inline">{authLabel}</span>
+              </div>
+            </NavLink>
           )}
         </nav>
       </div>
