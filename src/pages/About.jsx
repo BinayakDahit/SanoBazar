@@ -32,58 +32,75 @@ const values = [
   },
 ];
 
+const Title = ({ title, highlight }) => (
+  <div className="text-center mb-10">
+    <h2 className="text-3xl font-bold">
+      {title} <span className="text-red-500">{highlight}</span>
+    </h2>
+    <div className="mt-3 h-1 w-14 bg-red-500 mx-auto rounded-full" />
+  </div>
+);
+
 const About = () => {
   return (
     <div className="w-full">
-      {/* Header / Hero */}
+      {/* Header / Hero (no right image) */}
       <section className="bg-[#eeeeee]">
-        <div className="max-w-6xl mx-auto px-4 py-12 md:py-16 grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <p className="text-red-500 font-semibold">About Sano Bazar</p>
-            <h1 className="text-4xl md:text-5xl font-extrabold mt-2 leading-tight">
-              Simple, Affordable & Reliable Shopping
-            </h1>
-            <p className="text-gray-700 mt-4 leading-relaxed max-w-xl">
-              Sano Bazar is your everyday marketplace for trending fashion,
-              essentials, and more. We focus on quality products, fair pricing,
-              and a smooth shopping experience—from browsing to delivery.
-            </p>
+        <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+          <h1 className="text-4xl md:text-5xl font-extrabold mt-2 leading-tight">
+            Simple, Affordable & Reliable Shopping
+          </h1>
+          <p className="text-gray-700 mt-4 leading-relaxed max-w-3xl">
+            Sano Bazar is your everyday marketplace for trending fashion,
+            essentials, and more. We focus on quality products, fair pricing,
+            and a smooth shopping experience—from browsing to delivery.
+          </p>
 
-            <div className="mt-6 flex gap-3">
-              <Link
-                to="/products"
-                className="px-6 py-2.5 rounded-md bg-red-500 text-white font-semibold hover:bg-red-600 transition"
-              >
-                Explore Products
-              </Link>
-              <Link
-                to="/contact"
-                className="px-6 py-2.5 rounded-md border border-red-500 text-red-500 font-semibold hover:bg-red-500 hover:text-white transition"
-              >
-                Contact Us
-              </Link>
-            </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              to="/products"
+              className="px-6 py-2.5 rounded-md bg-red-500 text-white font-semibold hover:bg-red-600 transition"
+            >
+              Explore Products
+            </Link>
+            <Link
+              to="/contact"
+              className="px-6 py-2.5 rounded-md border border-red-500 text-red-500 font-semibold hover:bg-red-500 hover:text-white transition"
+            >
+              Contact Us
+            </Link>
           </div>
+        </div>
+      </section>
 
-          <div className="bg-white rounded-md shadow-md p-6">
-            <h3 className="text-xl font-bold">Our Mission</h3>
-            <p className="text-gray-700 mt-3 leading-relaxed">
-              To make online shopping easy and trustworthy for everyone by
-              providing a curated selection of products, fast delivery, and
-              supportive customer service.
-            </p>
+      {/* Mission & Vision */}
+      <section className="py-14">
+        <div className="max-w-6xl mx-auto px-4">
+          <Title title="Our" highlight="Mission & Vision" />
 
-            <h3 className="text-xl font-bold mt-6">Our Vision</h3>
-            <p className="text-gray-700 mt-3 leading-relaxed">
-              To become a beloved local-first brand that customers rely on for
-              everyday needs and new trends—at the right price.
-            </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white border rounded-md p-7 hover:shadow-lg transition">
+              <h3 className="text-2xl font-bold">Our Mission</h3>
+              <p className="text-gray-700 mt-3 leading-relaxed">
+                To make online shopping easy and trustworthy for everyone by
+                providing a curated selection of products, fast delivery, and
+                supportive customer service.
+              </p>
+            </div>
+
+            <div className="bg-white border rounded-md p-7 hover:shadow-lg transition">
+              <h3 className="text-2xl font-bold">Our Vision</h3>
+              <p className="text-gray-700 mt-3 leading-relaxed">
+                To become a beloved local-first brand that customers rely on for
+                everyday needs and new trends—at the right price.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-12">
+      <section className="py-12 bg-[#f7f7f7]">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((s, i) => (
@@ -102,7 +119,7 @@ const About = () => {
       </section>
 
       {/* Why choose us */}
-      <section className="py-14 bg-[#f7f7f7]">
+      <section className="py-14">
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold">
@@ -129,7 +146,7 @@ const About = () => {
       </section>
 
       {/* Story / Promise */}
-      <section className="py-14">
+      <section className="py-14 bg-[#f7f7f7]">
         <div className="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="text-3xl font-bold">Our Promise</h2>
@@ -168,7 +185,7 @@ const About = () => {
           <div className="rounded-md overflow-hidden shadow-md">
             <img
               src="https://images.unsplash.com/photo-1521337706264-a414f153a5ed?w=1200&auto=format&fit=crop&q=60"
-              alt="About Sano Bazar"
+              alt="Sano Bazar Shopping"
               className="w-full h-72 md:h-96 object-cover"
             />
           </div>

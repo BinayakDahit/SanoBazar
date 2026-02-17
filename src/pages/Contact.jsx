@@ -29,7 +29,6 @@ const Contact = () => {
       {/* Header */}
       <section className="bg-[#eeeeee]">
         <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
-          {/* <p className="text-red-500 font-semibold">Contact Sano Bazar</p> */}
           <h1 className="text-4xl md:text-5xl font-extrabold mt-2">
             We’re Here to Help
           </h1>
@@ -101,15 +100,25 @@ const Contact = () => {
               </div>
             </div>
 
-            {/* Map: Nepalgunj */}
+            {/* Map (Works reliably using OpenStreetMap embed) */}
             <div className="mt-8 overflow-hidden rounded-md border bg-white">
               <iframe
                 title="Sano Bazar Location - Nepalgunj"
                 className="w-full h-64"
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps?q=Nepalgunj%2C%20Nepal&output=embed"
-              />
+                src="https://www.openstreetmap.org/export/embed.html?bbox=81.5866%2C28.0206%2C81.6466%2C28.0806&layer=mapnik&marker=28.0506%2C81.6166"
+              ></iframe>
+            </div>
+
+            <div className="mt-3">
+              <a
+                className="text-red-500 font-semibold hover:underline"
+                href="https://www.google.com/maps/search/?api=1&query=Nepalgunj%2C%20Nepal"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open in Google Maps
+              </a>
             </div>
           </div>
 
